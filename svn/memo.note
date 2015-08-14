@@ -1,0 +1,8 @@
+1.  查看本地文件的log：svn log -l 20 -q
+    如果需要查看修改的文件的话：svn log -l 20 -q -v
+
+2.  查看远程文件的log：
+    svn log svn://venus/mnt/sda3/SVNRepository/project/bi/branch/v5.6 -l 20 -q
+    svn log -r HEAD:BASE -q -l 20
+
+3.  查看svn上的一些基本信息：svn info
