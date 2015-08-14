@@ -1,10 +1,18 @@
-1. 关闭命令输出：@echo off
-2. 打印字符串：echo
-3. 设置变量：set varName=[value]；注意等号前后没有空格
-4. 引用变量（包括系统变脸）：%varName%
-5. 打印空行（据听说这十种方法都可行）：echo= echo, echo; echo+ echo/ echo[ echo] echo: echo. echo\ pause 
-6. 编写bat文件，文件运行完后不自动关闭控制台。
+1.  关闭命令输出：@echo off
+
+2.  打印字符串：echo
+
+3.  设置变量：set varName=[value]；注意等号前后没有空格
+
+4.  引用变量（包括系统变脸）：%varName%
+
+5.  打印空行（据听说这十种方法都可行）：echo= echo, echo; echo+ echo/ echo[ echo] echo: echo. echo\ pause 
+
+6.  编写bat文件，文件运行完后不自动关闭控制台。
    pause ：  在代码结尾加“pause”，运行完成后，需要敲击任意键，才会关闭控制台。
-   cmd /k ：在代码结尾加“cmd /k”，运行完成后，可以在控制台继续输入其他指令。查看任务管理器可以发现，这时多了一个cmd.exe线程。
-   改注册表，在HKEY_CLASSES_ROOT/batfile/shell/open/command 里面把默认项的值改成cmd /E:ON /V:ON /F:ON /k "%1" %* 
-7. 
+
+    cmd /k ：在代码结尾加“cmd /k”，运行完成后，可以在控制台继续输入其他指令。查看任务管理器可以发现，这时多了一个cmd.exe线程。
+
+    改注册表，在HKEY_CLASSES_ROOT/batfile/shell/open/command 里面把默认项的值改成cmd /E:ON /V:ON /F:ON /k "%1" %* 
+
+7.  修改控制台的标题：title [titleName]
