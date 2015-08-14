@@ -2,9 +2,13 @@
 2. 删除C:\windows\SysWOW64\libcurl.dll
 3. 进入[git]目录；运行git clone https://github.com/kuteng/study.git
 4. 查看所有配置：git config --list
-5. 进入study目录，设置提交默认分支：git config --local push.default matching
-6. 设计记住密码：git config --local credential.helper store
-7. 其他常用指令：
+5. 设置默认编辑器：git config --system core.editor vim
+   设置默认比较器：git config --system gui.diffopts "bcompare \"$LOCAL\" \"$REMOTE\""
+   设置默认用户名：git config --global user.name "peter"
+   设置默认邮箱：  git config --global user.email "peterhome@aliyun.com"
+6. 进入study目录，设置提交默认分支：git config --local push.default matching
+7. 设计记住密码：git config --local credential.helper store
+8. 其他常用指令：
    添加文件：git add [file]  （我不知道如何单独添加文件夹）
    提交修改：git commit -a -m "message"
    推送修改：git push

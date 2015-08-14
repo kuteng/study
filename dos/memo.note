@@ -8,6 +8,8 @@
 
 5.  打印空行（据听说这十种方法都可行）：echo= echo, echo; echo+ echo/ echo[ echo] echo: echo. echo\ pause 
 
+7.  打印文件列表：dir /b 或 dir /w
+
 6.  编写bat文件，文件运行完后不自动关闭控制台。
    pause ：  在代码结尾加“pause”，运行完成后，需要敲击任意键，才会关闭控制台。
 
