@@ -46,9 +46,14 @@ git config --local core.excludesfile .gitignore
 在[git]/etc/gitconfig文件内添加如下内容：
 ----------------------------------------------
 [diff]
-	external = bcompare
+	tool = bc3
+[difftool]
+    prompt = false
+[difftool "bc3"]
+    cmd = \"C:/Program Files (x86)/Beyond Compare 4/BCompare.exe\" \"$LOCAL\" \"$REMOTE\"
+
 ----------------------------------------------
-此方法只能是比较实用bcompare，不能使合并使用bcompare！
+注意，此配置对应的命令是：git difftool；而不是：git diff。
 
 ===============================================================   
 
