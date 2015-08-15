@@ -13,7 +13,8 @@ object StudyApply {
    def main(args: Array[String]) {
       println(StudyApply());
       val bar = new Bar;
-      println("bar: " + bar())
+      println("bar: " + bar());
+      //Bar()与bar()的区别？
    }
 }
 
