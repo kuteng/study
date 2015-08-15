@@ -1,14 +1,14 @@
 ===========================================================================
-Èç¹û¶ÔÏóTest¶¨ÒåÖÐ£¬¶¨ÒåÁË·½·¨main(args: Array[String])¡£
-ÄÇÃ´Ö»ÐèÒªÔËÐÐÇÃ»÷£ºscala Test¡£main·½·¨¾Í»áÔËÐÐµ½¡£
+å¦‚æžœå¯¹è±¡Testå®šä¹‰ä¸­ï¼Œå®šä¹‰äº†æ–¹æ³•main(args: Array[String])ã€‚
+é‚£ä¹ˆåªéœ€è¦è¿è¡Œæ•²å‡»ï¼šscala Testã€‚mainæ–¹æ³•å°±ä¼šè¿è¡Œåˆ°ã€‚
 
-ÎÊÌâ£º
-ÕâÊÇÒ»ÖÖÔõÑùµÄ¹¤×÷»úÖÆ£¿main·½·¨µÄµ÷ÓÃÔÚÄÄ¸ö´ÎÐò¼¶±ðÉÏ£¿
-ÎÒÐèÒª×¢Òâ¶ÔÓÚscalaÖÐmain·½·¨µÄ×ÊÁÏ£¡
+é—®é¢˜ï¼š
+è¿™æ˜¯ä¸€ç§æ€Žæ ·çš„å·¥ä½œæœºåˆ¶ï¼Ÿmainæ–¹æ³•çš„è°ƒç”¨åœ¨å“ªä¸ªæ¬¡åºçº§åˆ«ä¸Šï¼Ÿ
+æˆ‘éœ€è¦æ³¨æ„å¯¹äºŽscalaä¸­mainæ–¹æ³•çš„èµ„æ–™ï¼
 ===========================================================================
-ÈçºÎ¿ìËÙÔËÐÐÒ»¸öscala
+å¦‚ä½•å¿«é€Ÿè¿è¡Œä¸€ä¸ªscala
 
-´´½¨Ò»¸öTest.scala£¬±àÒëÍê³Éºó¡£¿ÉÒÔÖ±½ÓÔËÐÐscala Test¡£
+åˆ›å»ºä¸€ä¸ªTest.scalaï¼Œç¼–è¯‘å®ŒæˆåŽã€‚å¯ä»¥ç›´æŽ¥è¿è¡Œscala Testã€‚
 
 -----------------------------------------
 gvim Test.scala

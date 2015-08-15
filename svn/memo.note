@@ -1,8 +1,8 @@
-1.  ╡И©╢╠╬╣ьнд╪Ч╣дlogё╨svn log -l 20 -q
-    хГ╧ШпХр╙╡И©╢пч╦д╣днд╪Ч╣д╩╟ё╨svn log -l 20 -q -v
+1.  Ф÷╔Г°▀Ф°╛Е°╟Ф√┤Д╩╤Г └logО╪ svn log -l 20 -q
+    Е╕┌Ф·°И°─Х╕│Ф÷╔Г°▀Д©╝Ф■╧Г └Ф√┤Д╩╤Г └Х╞²О╪ svn log -l 20 -q -v
 
-2.  ╡И©╢т╤Ёлнд╪Ч╣дlogё╨
+2.  Ф÷╔Г°▀Х©°Г╗▀Ф√┤Д╩╤Г └logО╪ 
     svn log svn://venus/mnt/sda3/SVNRepository/project/bi/branch/v5.6 -l 20 -q
     svn log -r HEAD:BASE -q -l 20
 
-3.  ╡И©╢svnио╣др╩п╘╩Ы╠╬пео╒ё╨svn info
+3.  Ф÷╔Г°▀svnД╦┼Г └Д╦─Д╨⌡Е÷╨Ф°╛Д©║Ф│╞О╪ svn info

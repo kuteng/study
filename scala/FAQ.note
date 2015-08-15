@@ -14,15 +14,15 @@
 ===========================================================================
 ===========================================================================
 ===========================================================================
-±àÒë²»ÄÜÍ¨¹ı
-a. ÎÒÔÚ[scala]/school/basisÖĞ´´½¨ÎÄ¼şTest.scala¡£
-b. ÔÚ[scala]Ä¿Â¼£¬Ö´ĞĞÃüÁî£ºscalac school/basis/Test.scala£¬µÃµ½ÕıÈ·µÄclass¡£
-c. ÔÚ[scala]Ä¿Â¼£¬Ö´ĞĞÃüÁî£ºscala -e "new school.basis.Test()"±¨´í£ºC:\Users\Peter\AppData\Local\Temp\scalacmd6823880783520317075.scala:1: error: type Test is not a member of package school.basis
+ç¼–è¯‘ä¸èƒ½é€šè¿‡
+a. æˆ‘åœ¨[scala]/school/basisä¸­åˆ›å»ºæ–‡ä»¶Test.scalaã€‚
+b. åœ¨[scala]ç›®å½•ï¼Œæ‰§è¡Œå‘½ä»¤ï¼šscalac school/basis/Test.scalaï¼Œå¾—åˆ°æ­£ç¡®çš„classã€‚
+c. åœ¨[scala]ç›®å½•ï¼Œæ‰§è¡Œå‘½ä»¤ï¼šscala -e "new school.basis.Test()"æŠ¥é”™ï¼šC:\Users\Peter\AppData\Local\Temp\scalacmd6823880783520317075.scala:1: error: type Test is not a member of package school.basis
 
-   ÎÊÌâ£¬ÎªÊ²Ã´»á±¨Õâ¸ö´íÎó£¿ÎÒÈçºÎ²ÅÄÜÔËĞĞÎÒ±àÒëµÄ½á¹û£¿
+   é—®é¢˜ï¼Œä¸ºä»€ä¹ˆä¼šæŠ¥è¿™ä¸ªé”™è¯¯ï¼Ÿæˆ‘å¦‚ä½•æ‰èƒ½è¿è¡Œæˆ‘ç¼–è¯‘çš„ç»“æœï¼Ÿ
 
 ----------------------------------
-¸½¼ş£¬Test.scalaµÄÄÚÈİ£º
+é™„ä»¶ï¼ŒTest.scalaçš„å†…å®¹ï¼š
 
 package school.basis
 
