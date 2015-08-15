@@ -45,6 +45,34 @@ object FirstKnow {
       // 变量也可以接受匿名函数，
       var addOne3 = (x: Int) => x + 1;
       println("匿名函数3：" + addOne3(1));
+
+      // 调用使用{}格式化后的方法
+      println("timesTwo: " + timesTwo(2));
+
+      // 匿名函数也可以这样定义。
+      // 这是匿名函数的第二种定义形式。
+      val anonymityFun = { i: Int =>
+         println("the anonymity fuction");
+         i * 2
+      }
+      println("anonymityFun: " + anonymityFun(3));
+
+      // 匿名函数定义的推导形式的第一次尝试。
+      // val anonymityFun2 = i: Int => i * 3;
+      // println("anonymityFun: " + anonymityFun2(3));
+      // 尝试失败，错误如下：
+      // error: identifier expected but integer literal found.
+      //     val anonymityFun2 = i: Int => i * 3;
+      //                                       ^
+
+      // 为什么匿名函数定义中，必须被{}包起来，才能将参数列表外的括号省去。
+
+      // 匿名函数定义的推导形式的第一次尝试。
+      val anonymityFun3 = { (i: Int) =>
+         println("匿名函数定义的推导形式的第一次尝试");
+         i * 2
+      }
+      println("尝试成功: " + anonymityFun3(4));
    }
 
    /**
@@ -58,4 +86,12 @@ object FirstKnow {
     * 注意，这里不仅没有了参数，而且还没有返回值类型。
     */
    def threeFun() = 1 + 2;
+
+   /**
+    * 使用{}来格式化代码，使之易读。
+    */
+   def timesTwo(i: Int): Int = {
+      println("the TimesTwo");
+      i * 2;
+   }
 }
