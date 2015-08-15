@@ -29,7 +29,10 @@ object FirstKnow {
       // var num01 = tryOne(2);
 
       // 不带参数的参数调用
-      println("Result: " + threeFun() + ", " + threeFun);
+      println("无参的函数调用，可省括号: " + threeFun() + ", " + threeFun);
+
+      // 带参数却没有返回值类型的函数调用
+      println("带参无类型的函数调用: " + threeFun2(3));
 
       /**
        * 匿名函数
@@ -86,6 +89,11 @@ object FirstKnow {
     * 注意，这里不仅没有了参数，而且还没有返回值类型。
     */
    def threeFun() = 1 + 2;
+
+   /**
+    * 带参数却省略掉返回值类型的函数
+    */
+   def threeFun2(i: Int) = i + 3;
 
    /**
     * 使用{}来格式化代码，使之易读。
