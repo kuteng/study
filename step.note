@@ -12,3 +12,57 @@
    添加文件：git add [file]  （我不知道如何单独添加文件夹）
    提交修改：git commit -a -m "message"
    推送修改：git push
+
+   
+其他设置   
+===============================================================   
+设置忽略列表
+
+在仓库根目录，新建文件.gitignore。内容参考如下：
+--------------------------------------------------------------------
+# 此为注释，将被Git忽略
+# 忽略所有 .class 结尾的文件
+*.class
+
+# 但是 lib.class 除外
+!lib.class
+
+# 仅仅忽略项目根目录下的 TODD 文件，不包含其他目录或子目录下的TODD文件
+/TODD
+
+# 忽略 build/ 目录下的所有文件
+build/
+
+# 会忽略 doc/notes.text 但不包含 doc/server/arch.text
+doc/*.txt
+---------------------------------------------------------------------
+
+然后设置局部属性
+git config --local core.excludesfile .gitignore
+
+===============================================================   
+将beyondcompare于git集成
+
+在[git]/etc/gitconfig文件内添加如下内容：
+----------------------------------------------
+[diff]
+    tool = bcompare
+[difftool]
+    prompt = false
+[difftool "bc3"]
+    #use cygpath to transform cygwin path $LOCAL (something like /tmp/U5VvP1_abc) to windows path, because bc3 is a windows software
+    #cmd = \"c:/program files/beyond compare 3/bcomp.exe\" "$(cygpath -w $LOCAL)" "$REMOTE"
+    cmd = bcompare "$(cygpath -w $LOCAL)" "$REMOTE"
+[merge]
+    tool = bcompare
+[mergetool]
+    prompt = false
+[mergetool "bc3"]
+    #trustExitCode = true
+    #cmd = \"c:/program files/beyond compare 3/bcomp.exe\" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+    cmd = compare "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+
+----------------------------------------------
+
+===============================================================   
+

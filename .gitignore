@@ -1,0 +1,15 @@
+# 此为注释，将被Git忽略
+# 忽略所有 .class 结尾的文件
+*.class
+
+# 但是 lib.class 除外
+# !lib.class
+
+# 仅仅忽略项目根目录下的 TODD 文件，不包含其他目录或子目录下的TODD文件
+# /TODD
+
+# 忽略 build/ 目录下的所有文件
+# build/
+
+# 会忽略 doc/notes.text 但不包含 doc/server/arch.text
+# doc/*.txt
