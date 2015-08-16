@@ -76,6 +76,9 @@ object FirstKnow {
          i * 2
       }
       println("尝试成功: " + anonymityFun3(4));
+
+      // 调用“部分应用”的实例
+      println("部分应用：" + add2(3));
    }
 
    /**
@@ -102,4 +105,14 @@ object FirstKnow {
       println("the TimesTwo");
       i * 2;
    }
+
+   def adder(m: Int, n: Int) = m + n;
+
+   /**
+    * 部分应用
+    * 我们可以使用下划线（_）部分应用一个函数，结果将得到另一个函数。
+    * 我们可以将下划线认为是一个没有命名的神奇通配符。
+    * 在{ _ + 2 }的上下文中，它代表一个匿名参数。
+    */
+   def add2 = adder(2, _: Int);
 }

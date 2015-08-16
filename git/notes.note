@@ -2,7 +2,8 @@
 2. git clone时，如果报错：Protocol https not supported or disabled in libcurl。那么考虑删除文件“C:\Windows\SysWOW64\libcurl.dll”。
 3. ren [oldName] [newName] 重命名文件。
 4. git rm [filePath]  删除文件
-5. 
+5. git config --global credential.helper store 记住密码
+6. git config --global push.default matching 设置推送的默认分支。
 
 其他技巧
 ==========================================================================
