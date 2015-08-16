@@ -77,8 +77,21 @@ Vim官方的插件网址为：http://www.vim.org/scripts/
 
 ====================================================================
 为vim设置语法高亮。（此方法为我自己东拼西凑出来的）
+   在文件[vim]/vim74/_vimrc中，添加如下语句：
+   --------------------------------------------------------
+   syntax enable
+   syntax on
+   --------------------------------------------------------
+
    访问仓库：https://github.com/derekwyatt/vim-scala.git
-   将目录syntax、indent、ftplugin下的scala.vim拷贝到[vim]/vim74下的对应目录下。
+   将目录syntax、indent、ftplugin下的scala.vim拷贝到[vim]/vim74下的对应目录下。（这与仓库中中三个文件夹下的其他文件的用处，我就不知道了？看来有时间我需要研究一下这个仓库）
+
+   在[vim]/vim74/filetype.vim中，搜索javascript，在其下面，粘贴如下内容：
+   ----------------------------------------------------
+   " Scala
+   au BufNewFile,BufRead *.scala   setf scala
+   ----------------------------------------------------
+   
    之后需要为gvim添加新的编译器sbt。如果不想添加，需要将ftplugin下的scala.vim内注释掉 compiler sbt。（或许上一步中不复制这个文件也可以！）
 
    当然也可以访问我的仓库：https://github.com/kuteng/study.git
