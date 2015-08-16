@@ -79,6 +79,31 @@ object FirstKnow {
 
       // 调用“部分应用”的实例
       println("部分应用：" + add2(3));
+
+      // 柯里化函数的应用
+      // 这与调用用multiply时，参数是分开的
+      println("正常的调用被柯里化的函数multiply：" + multiply(2)(3));
+      // 我肯可以填上第一个参数并且部分应用第二个参数
+      val timesTwo2 = multiply(2) _;
+      println("部分应用柯里化函数multiply：" + timesTwo2(3));
+
+      // 我们可以对任意多参数函数进行函数柯里化。
+      // 注意多参函数的柯里化的写法！
+      // 问题：
+      //    adder被柯里化之后，变成什么样子了？
+      val adder_curried = (adder _).curried;
+      // val adder_normal = adder; // 这种写法是错误的，等号后面不能只跟函数名。那么我又没有办法将函数adder赋予不变量adder_normal呢？注释是函数，不是函数的返回值。
+      // println("被柯里化之前的adder: " + adder_normal);
+      println("被柯里化之后的adder: " + adder_curried);
+
+      // 这个的输出怎么解释？
+      println("实验：" + adder_curried(3));
+      // 输出结果：
+      //    实验：<function1>
+
+      /**问题：
+       * 柯里化方法与正常的多参数函数部分应用，似乎没有什么却别。那为什么要设计出一个柯里化函数呢？
+       */
    }
 
    /**
@@ -115,4 +140,14 @@ object FirstKnow {
     * 在{ _ + 2 }的上下文中，它代表一个匿名参数。
     */
    def add2 = adder(2, _: Int);
+
+   /**
+    * 柯里化参数
+    * 有时会有这样的需求：允许别人一会再你的函数上应用一些参数，然后有应用另外一些参数。
+    * 例如乘法，在一个场景中需要选择乘数，而另外一个场景需要选择被乘数。
+    * 问题：
+    *   柯里化参数与正规的“部分应用”有什么不同吗？
+    *   柯里化函数声明时，必须每个参数一个括号吗？答：似乎是的！
+    */
+   def multiply(m: Int)(n: Int): Int = m * n;
 }
