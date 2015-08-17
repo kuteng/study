@@ -110,6 +110,27 @@ Vim官方的插件网址为：http://www.vim.org/scripts/
    sbt软件的官网：http://www.scala-sbt.org/release/tutorial/Setup.html
 
 ====================================================================
+解决使用vim（不是gvim）时，中文总是乱码的情况。
+原因：文件编码是utf-8，dos编码是gbk。
+策略：通过vim设置，使其保存文件的编码是utf-8，打印到前台的编码是gbk。
+
+方法：
+--------------------------------------------
+" 设置编辑代码和文件编码。此设置对于gvim也有效。
+set encoding=utf-8
+set fileencoding=utf-8
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+language messages zh_CN.utf-8
+" 设置打印到前台的编码，cp936代表gbk，cp65001代表utf-8。此设置对于gvim无效，因为gvim的前台不是dos。
+set termencoding=cp936
+--------------------------------------------
+
+效果验证：
+使用vim创建一个新文件，编辑中，敲写中文，没有乱码；保存文件，在用UE打开，参看其编码为utf-8，且在UE中也没出现中文乱码。
+
+其他方法：
+将dos的编码改为utf-8应该也是一种策略，但是我没有深入研究。
 
 ====================================================================
 
