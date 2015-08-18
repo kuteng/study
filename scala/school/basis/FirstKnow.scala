@@ -24,9 +24,13 @@ object FirstKnow {
       // 调用函数
       val three = addOne(2);
       println("函数：three=" + three);
-      // 下面这个种用法是错误的
+      // 下面这个种用法是错误的。
       // val tryOne = addOne;
       // var num01 = tryOne(2);
+
+      // Scala也支持函数内定义函数！
+      def innerFun() = 2 + 1;
+      println("函数内定义函数 innerFun: " + innerFun() + ", " + innerFun);
 
       // 不带参数的参数调用
       println("无参的函数调用，可省括号: " + threeFun() + ", " + threeFun);
@@ -40,7 +44,11 @@ object FirstKnow {
        */
       // 此处输出的是：函数对象，不是函数结果。
       println("匿名函数1：" + ((x: Int) => x + 1));
-      
+
+      // 如果我想得到类似于上一个的输出（<function1>），直接写普通方法的方法名是不行的。会报错。
+      //println("我想到的方法threeFun2的，类似于上一个输出的打印结果：" + treeFun2);
+      // 我该怎么办，才能得到我想要的输出呢？
+
       // 我们可以传递匿名函数，或将其保存成不变量。
       val addOne2 = (x: Int) => x + 1;
       println("匿名函数2：" + addOne2(1));
@@ -59,6 +67,8 @@ object FirstKnow {
          i * 2
       }
       println("anonymityFun: " + anonymityFun(3));
+      // 如果我需要强调匿名方法的返回值呢？是不是就不能用这种形式定义匿名方法了？
+      // 会出现上面的需求吗？
 
       // 匿名函数定义的推导形式的第一次尝试。
       // val anonymityFun2 = i: Int => i * 3;
@@ -80,7 +90,7 @@ object FirstKnow {
       // 调用“部分应用”的实例
       println("部分应用：" + add2(3));
 
-      // 柯里化函数的应用
+      /** 柯里化函数的应用 ****************************************************/
       // 这与调用用multiply时，参数是分开的
       println("正常的调用被柯里化的函数multiply：" + multiply(2)(3));
       // 我肯可以填上第一个参数并且部分应用第二个参数
@@ -95,6 +105,7 @@ object FirstKnow {
       // val adder_normal = adder; // 这种写法是错误的，等号后面不能只跟函数名。那么我又没有办法将函数adder赋予不变量adder_normal呢？注释是函数，不是函数的返回值。
       // println("被柯里化之前的adder: " + adder_normal);
       println("被柯里化之后的adder: " + adder_curried);
+      // 为什么adder_normal不能直接打印，而adder_curried却可以？拿到柯里化得到的结果不是函数，那得到的东西是什么？
 
       // 这个的输出怎么解释？
       println("实验：" + adder_curried(3));
@@ -104,6 +115,23 @@ object FirstKnow {
       /**问题：
        * 柯里化方法与正常的多参数函数部分应用，似乎没有什么却别。那为什么要设计出一个柯里化函数呢？
        */
+
+      // 柯里化的其他地方的摘录。
+      def first(x: Int) = (y: Int) => x - y;
+      val second = first(3);
+      println("这是一个外面的柯里化的摘录：" + second(1));
+      // 上面对于函数first的定义又是一种新的定义形式。真够乱的。
+
+      /**可变参数*****************************************************************/
+      println("可变长度参数：" + capitalizaAll("peter", "humming"));
+
+      /** 类 *********************************************************************/
+      // 创建一个类对象，我们需要new。
+      val calc = new Calculator;
+      println("类：" + calc + ", " + calc.add(1, 2) + ", " + calc.brand);
+      // 似乎是这样：
+      // 方法是属于Class的，函数是属于Object。
+      // 好吧，我的确不知道他们有什么不同。
    }
 
    /**
@@ -150,4 +178,23 @@ object FirstKnow {
     *   柯里化函数声明时，必须每个参数一个括号吗？答：似乎是的！
     */
    def multiply(m: Int)(n: Int): Int = m * n;
+
+   /**
+    * 可变长度参数的函数。
+    */
+   def capitalizaAll(args: String*) = {
+      args.map { arg =>
+         arg.capitalize
+      }
+   }
+
+   /**
+    * 类
+    */
+   class Calculator {
+      val brand: String = "HP";
+
+      // 定义的一个方法：add。
+      def add(m: Int, n: Int): Int = m + n;
+   }
 }
